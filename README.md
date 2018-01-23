@@ -23,7 +23,7 @@ Model     |                      Parameters Setting                       | Test
 [resnet50](https://arxiv.org/abs/1512.03385)|                                                               |        |
 [resnet101](https://arxiv.org/abs/1512.03385)|                                                               |       |
 
-**(Tests are conducted using single crop)
+**(Tests are conducted using single crop)**
 **(Learning rate for all models are divided by 10 at both 100 and 200 epoch)**
 
 ## How to train the model
