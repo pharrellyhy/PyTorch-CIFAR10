@@ -24,12 +24,13 @@ Model     |                      Parameters Setting                       | Test
 
 **(Learning rate for all models are divided by 10 at both 100 and 200 epoch)**
 
-
-## Run the program
+## How to train the model
 You can run the program like the code snippet in below:
 ```
 CUDA_VISIBLE_DEVICES=0,1 python main.py --arch resnet50 --optimizer SGD --num-workers 6 --epochs 300 --batch-size 128 --learning-rate 0.01 --momentum 0.9 --weight-decay 1e-4 --print-freq 10 --train-dir ../../datasets --test-dir ../../datasets --log-dir ./logs
 ```
+For testing, just add ```--evaluate``` and ```--resume /path/to/trained/model```
+
 ## TODO List
 - [x] ResNet
 - [ ] DenseNet
