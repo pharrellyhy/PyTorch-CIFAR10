@@ -22,7 +22,7 @@ class Tester():
 
         self.model.eval()
 
-        t = tqdm(enumerate(test_loader), total=len(test_loader), desc='', leave=True)
+        t = tqdm(enumerate(test_loader), total=len(test_loader), desc='', ncols=140, leave=True)
         for i, (inputs, targets) in t:
             targets = targets.cuda(async=True)
             inputs_var = Variable(inputs, volatile=True)
@@ -38,17 +38,10 @@ class Tester():
 
             if i % print_freq == 0:
                 t.set_description('*Test: [{0}/{1}] | '
-                        '*Loss=({loss.val:.3f})/({loss.avg:3f}) | '
-                        '*Prec@1=({top1.val:.3f})/({top1.avg:3f})'.format(
+                        '*Loss=({loss.val:.3f})/({loss.avg:.3f}) | '
+                        '*Prec@1=({top1.val:.3f})/({top1.avg:.3f})'.format(
                           i + 1, len(test_loader), loss=losses, top1=top1))
                 t.refresh()
                 sleep(0.01)
-            # if (i + 1) % print_freq == 0:
-            #     print(
-            #         '*Test: [{0}/{1}]\n'
-            #         '*Loss {loss.val:.4f} ({loss.avg:4f})\n'
-            #         '*Precision@1 {top1.val:.4f} ({top1.avg:4f})\n'.format(
-            #           i + 1, len(test_loader), loss=losses, top1=top1)
-            #     )
 
         print('*Test precision@1 = {:.4f}'.format(top1.avg))

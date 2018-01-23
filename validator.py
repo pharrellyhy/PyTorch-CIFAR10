@@ -22,7 +22,7 @@ class Validator():
 
         self.model.eval()
 
-        t = tqdm(enumerate(val_loader), total=len(val_loader), desc='', leave=True)
+        t = tqdm(enumerate(val_loader), total=len(val_loader), desc='', ncols=140, leave=True)
         for i, (inputs, targets) in t:
             targets = targets.cuda(async=True)
             inputs_var = Variable(inputs, volatile=True)
@@ -38,18 +38,11 @@ class Validator():
 
             if i % print_freq == 0:
                 t.set_description('*Val: [{0}][{1}/{2}] | '
-                        '*Loss=({loss.val:.3f})/({loss.avg:3f}) | '
-                        '*Prec@1=({top1.val:.3f})/({top1.avg:3f})'.format(
+                        '*Loss=({loss.val:.3f})/({loss.avg:.3f}) | '
+                        '*Prec@1=({top1.val:.3f})/({top1.avg:.3f})'.format(
                           epoch, i + 1, len(val_loader), loss=losses, top1=top1))
                 t.refresh()
                 sleep(0.01)
-            # if (i + 1) % print_freq == 0:
-            #     print(
-            #         '*Val: [{0}][{1}/{2}]\n'
-            #         '*Loss {loss.val:.4f} ({loss.avg:4f})\n'
-            #         '*Precision@1 {top1.val:.4f} ({top1.avg:4f})\n'.format(
-            #           epoch, i + 1, len(val_loader), loss=losses, top1=top1)
-            #     )
 
             logger.scalar_summary('val_loss', losses.avg, epoch * len(val_loader) + i + 1)
 

@@ -150,7 +150,7 @@ def main():
     start = datetime.datetime.now().replace(microsecond=0)
     print('\n===> Training starts at: {}\n'.format(start))
 
-    t = tqdm(range(args.start_epoch, args.epochs), desc='Training Process', leave=True)
+    t = tqdm(range(args.start_epoch, args.epochs), desc='Training Process', ncols=100, leave=True)
     for epoch in t:
         adjust_lr(optimizer, epoch, args, logger)
 

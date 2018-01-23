@@ -22,7 +22,7 @@ class Trainer():
 
         self.model.train()
 
-        t = tqdm(enumerate(train_loader), total=len(train_loader), desc='', leave=True)
+        t = tqdm(enumerate(train_loader), total=len(train_loader), desc='', ncols=140, leave=True)
         for i, (inputs, targets) in t:
             targets = targets.cuda(async=True)
 
@@ -43,19 +43,11 @@ class Trainer():
 
             if i % print_freq == 0:
                 t.set_description('*Train: [{0}][{1}/{2}] | '
-                        '*Loss=({loss.val:.3f})/({loss.avg:3f}) | '
-                        '*Prec@1=({top1.val:.3f})/({top1.avg:3f})'.format(
+                        '*Loss=({loss.val:.3f})/({loss.avg:.3f}) | '
+                        '*Prec@1=({top1.val:.3f})/({top1.avg:.3f})'.format(
                           epoch, i + 1, len(train_loader), loss=losses, top1=top1))
                 t.refresh()
                 sleep(0.01)
-
-            # if (i + 1) % print_freq == 0:
-            #     print(
-            #         '*Train: [{0}][{1}/{2}]\n'
-            #         '*Loss {loss.val:.4f} ({loss.avg:4f})\n'
-            #         '*Precision@1 {top1.val:.4f} ({top1.avg:4f})\n'.format(
-            #           epoch, i + 1, len(train_loader), loss=losses, top1=top1)
-            #     )
 
             logger.scalar_summary('train_loss', losses.avg, epoch * len(train_loader) + i + 1)
 
