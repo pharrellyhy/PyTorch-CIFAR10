@@ -17,8 +17,10 @@ Following are the abbreviations for parameters:
 
 Model     |                      Parameters Setting                       | Test Accuracy  |
 --------- | ------------------------------------------------------------- | -------------- |
-resnet18  | o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4  |     93.59%     |
-resnet18  | o: Nesterov SGD; m: 0.95; e: 300; bs: 256; lr: 0.01; wd: 1e-4 |     93.04%     |
+[resnet18](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4  | 93.59% |
+[resnet18](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.95; e: 300; bs: 256; lr: 0.01; wd: 1e-4 | 93.04% |
+[resnet50](https://arxiv.org/abs/1512.03385)|                                                               |        |
+[resnet101](https://arxiv.org/abs/1512.03385)|                                                               |       |
 
 **(Learning rate for all models are divided by 10 at both 100 and 200 epoch)**
 
