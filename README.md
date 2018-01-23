@@ -30,3 +30,10 @@ You can run the program like the code snippet in below:
 ```
 CUDA_VISIBLE_DEVICES=0,1 python main.py --arch resnet50 --optimizer SGD --num-workers 6 --epochs 300 --batch-size 128 --learning-rate 0.01 --momentum 0.9 --weight-decay 1e-4 --print-freq 10 --train-dir ../../datasets --test-dir ../../datasets --log-dir ./logs
 ```
+## TODO List
+- [x] ResNet
+- [ ] DenseNet
+- [ ] ResNeXt
+- [ ] Inception v4
+- [ ] Inception ResNet v2
+- [ ] pre-activation ResNet
