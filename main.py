@@ -102,7 +102,7 @@ def main():
             best_prec1 = checkpoint['best_prec1']
             model.load_state_dict(checkpoint['state_dict'])
             optimizer.load_state_dict(checkpoint['optimizer'])
-            print('\n**** checkpoint {} loader at epoch {} ...\n'.format(args.resume,
+            print('\n**** checkpoint {} loaded at epoch {} ...\n'.format(args.resume,
                 checkpoint['epoch']))
         else:
             raise Exception('\n===> No checkpoint found at {} ...\n'.format(args.resume))
