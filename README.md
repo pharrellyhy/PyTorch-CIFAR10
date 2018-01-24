@@ -20,7 +20,7 @@ Model     |                      Parameters Setting                       | Test
 --------- | ------------------------------------------------------------- | -------------- |
 [resnet18](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4  | 93.59% |
 [resnet18](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.95; e: 300; bs: 256; lr: 0.01; wd: 1e-4 | 93.04% |
-[resnet50](https://arxiv.org/abs/1512.03385)|                                                               |        |
+[resnet50](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 256; lr: 0.01; wd: 1e-4 | 93.80% |
 [resnet101](https://arxiv.org/abs/1512.03385)|                                                               |       |
 
 **(Tests are conducted using single crop)**
@@ -33,6 +33,8 @@ You can run the program like the code snippet in below:
 CUDA_VISIBLE_DEVICES=0,1 python main.py --arch resnet50 --optimizer SGD --num-workers 6 --epochs 300 --batch-size 128 --learning-rate 0.01 --momentum 0.9 --weight-decay 1e-4 --print-freq 10 --train-dir ../../datasets --test-dir ../../datasets --log-dir ./logs
 ```
 For testing, just add ```--evaluate``` and ```--resume /path/to/trained/model```
+
+To launch tensorboad, run ```tensorboard --logidr ./logs/ --port 8800```
 
 ## TODO List
 - [x] ResNet
