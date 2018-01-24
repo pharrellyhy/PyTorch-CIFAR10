@@ -4,7 +4,7 @@
 ## Features
 - Progress bar ([tqdm](https://github.com/tqdm/tqdm)) for training, validation and test
 - All parameters are configured from command line
-- Saved losses, accuracies and learning rates to tensorboard while training and validating
+- Losses, accuracies and learning rates are saved to tensorboard while training and validating
 ![resnet18](/images/resnet18.png)
 
 ## Supported Models
