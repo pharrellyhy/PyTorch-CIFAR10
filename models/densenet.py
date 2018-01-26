@@ -3,7 +3,8 @@ Pytorch implementation for DenseNet.
 
 Original paper: https://arxiv.org/abs/1608.06993
 
-This mplementation is largely adopted from https://github.com/pytorch/vision/blob/master/torchvision/models/densenet.py
+This implementation is largely adopted from:
+https://github.com/pytorch/vision/blob/master/torchvision/models/densenet.py
 '''
 
 
@@ -43,7 +44,7 @@ def densenet201(**kwargs):
 
 
 def densenet_cifar(**kwargs):
-    model = DenseNet(growth_rate=12, num_init_features=64, block_config=(6, 12, 24), **kwargs)
+    model = DenseNet(growth_rate=24, num_init_features=64, block_config=(6, 12, 24), **kwargs)
 
     return model
 

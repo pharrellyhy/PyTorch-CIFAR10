@@ -143,7 +143,7 @@ def main():
     cudnn.benchmark = True
 
     if args.evaluate:
-        tester.test()
+        tester.test(test_loader)
 
         return
 
