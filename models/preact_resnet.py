@@ -10,3 +10,9 @@ import torch.nn.functional as F
 
 from torch.autograd import Variable
 
+
+class BasicBlock(nn.Module):
+    expansion = 1
+
+    def __init__(self, in_planes, planes, stride=1, shortcut=None):
+        super(BasicBlock, self).__init__()
