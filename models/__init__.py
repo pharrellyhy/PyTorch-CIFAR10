@@ -15,6 +15,11 @@ __models = {
   'resnet101': resnet101,
   'resnet152': resnet152,
   'densenet_cifar': densenet_cifar,
+  'preact_resnet18': preact_resnet18,
+  'preact_resnet34': preact_resnet34,
+  'preact_resnet50': preact_resnet50,
+  'preact_resnet101': preact_resnet101,
+  'preact_resnet152': preact_resnet152,
 }
 
 

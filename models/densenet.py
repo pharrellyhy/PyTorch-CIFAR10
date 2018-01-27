@@ -49,6 +49,12 @@ def densenet_cifar(**kwargs):
     return model
 
 
+# def densenet_cifar(**kwargs):
+#     model = DenseNet(growth_rate=32, num_init_features=64, block_config=(6, 12, 24, 16), **kwargs)
+
+#     return model
+
+
 class _DenseLayer(nn.Sequential):
     def __init__(self, num_input_features, growth_rate, bn_size, drop_rate):
         super(_DenseLayer, self).__init__()
