@@ -45,4 +45,4 @@ To launch tensorboad, run ```tensorboard --logidr ./logs/ --port 8800```
 - [ ] ResNeXt
 - [ ] Inception v4
 - [ ] Inception ResNet v2
-- [ ] pre-activation ResNet
+- [x] pre-activation ResNet
