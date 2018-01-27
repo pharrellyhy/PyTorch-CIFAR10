@@ -21,7 +21,7 @@ Model     |                      Parameters Setting                       | Test
 [resnet18](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4  | 93.79% |
 [resnet50](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 256; lr: 0.01; wd: 1e-4 | 93.63% |
 [resnet101](https://arxiv.org/abs/1512.03385)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4 | 93.82% |
-[densenet101](https://arxiv.org/abs/1608.06993)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4 | 94.37% |
+[densenet121](https://arxiv.org/abs/1608.06993)| o: Nesterov SGD; m: 0.9; e: 300; bs: 128; lr: 0.01; wd: 1e-4 | 94.37% |
 
 **(Tests are conducted using single crop)**
 
